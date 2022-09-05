@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $username = $_POST["username"];
     $password = $_POST["password"];
     $sql = "SELECT * FROM users WHERE username = '" . $username . "'";
-    debug_to_console($sql); //' or (1=1) -- 
+    //debug_to_console($sql); //' or (1=1) -- 
     $result = $conn->query($sql);
     if (!$result) {
         trigger_error('Invalid query: ' . $conn->error);
@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $dbpassword = $row["password"];
         }
       } else {
-        debug_to_console("0 results");
+        //debug_to_console("0 results");
       }
 
       if(MD5($password) == $dbpassword){
