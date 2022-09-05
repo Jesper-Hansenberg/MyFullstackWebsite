@@ -7,7 +7,7 @@ session_start();
 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: index.php");
+    header("location: ../index.php");
     exit;
 }
 
@@ -21,42 +21,21 @@ $username_err = $password_err = $login_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Check if username is empty
-    if(empty($_POST["username"])){
+    if(empty(trim($_POST["username"]))){
         $username_err = "Please enter username.";
     } else{
-        $username = $_POST["username"];
+        $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
-    if(empty($_POST["password"])){
+    if(empty(trim($_POST["password"]))){
         $password_err = "Please enter your password.";
     } else{
-        $password = $_POST["password"];
+        $password = trim($_POST["password"]);
     }
     
     // Validate credentials
     if(empty($username_err) && empty($password_err)){
-        //asd' or (1=1) -- 
-        $sql = "SELECT * FROM users WHERE username = '" . $username . "'";
-        
-        echo $sql;
-        echo '<br><br><br>';
-        $result = $conn->query($sql);
-        if (!$result) {
-            trigger_error('Invalid query: ' . $conn->error);
-        }
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              $test = "id: " . $row["id"]. " - Name: " . $row["username"]. " " . $row["password"]. "<br>";
-              debug_to_console($test);
-            }
-          } else {
-            //echo "0 results";
-          }
-
-        //return;
         
         // Prepare a select statement
         $sql = "SELECT id, username, password FROM users WHERE username = ?";
@@ -88,7 +67,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: index.php");
+                            header("location: ../index.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
