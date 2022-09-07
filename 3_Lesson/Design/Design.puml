@@ -1,0 +1,39 @@
+@startuml
+
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "categories" as er_cate {
+  * PK : cat_id INT
+  --
+  * FK : cat_name VARCHAR(255)
+  cat_description VARCHAR(255)
+}
+
+entity "replies" as er_repl {
+    
+}
+
+entity "users" as er_user {
+
+}
+
+entity "topics" as er_topi {
+
+}
+
+entity "posts" as er_post {
+
+}
+
+
+er_cate ||..o{ er_topi
+er_user ||..o{ er_post
+er_user ||..o{ er_topi
+er_user ||..o{ er_repl
+er_topi ||..o{ er_repl
+
+@enduml
