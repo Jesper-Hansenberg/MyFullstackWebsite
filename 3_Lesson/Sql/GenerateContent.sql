@@ -30,6 +30,14 @@ INSERT INTO
 
 
 -- Create topics
+INSERT INTO
+        topics(topic_subject, topic_date, topic_cat, topic_by)
+    VALUES
+        ('Important topic',
+        NOW(),
+        1,
+        1
+        );
 
 -- Create posts
 
@@ -42,6 +50,14 @@ INSERT INTO
         1
         );
 
+
 -- Create replies
 
 -- Create categories
+
+INSERT INTO
+        categories(cat_name, cat_description)
+    VALUES
+        ('CATegory',
+        'Something about cats'
+        );

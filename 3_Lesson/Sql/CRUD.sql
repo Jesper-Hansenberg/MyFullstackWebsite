@@ -19,7 +19,7 @@ SELECT
 UPDATE 
         replies
     SET 
-        reply_content = 'ID 1'
+        reply_content = 'I changed my mind'
     WHERE 
         reply_id = 1;
 
