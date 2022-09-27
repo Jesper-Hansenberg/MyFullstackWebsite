@@ -13,12 +13,6 @@ CREATE TABLE categories (
 );
 
 
-CREATE TABLE replies (
-    reply_id        INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    reply_content   TEXT NOT NULL,
-    cat_description VARCHAR(255) NOT NULL
-);
-
 CREATE TABLE topics (
     topic_id        INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     topic_subject   VARCHAR(255) NOT NULL,
@@ -33,4 +27,5 @@ CREATE TABLE posts (
     post_date       DATETIME NOT NULL,
     post_topic      INT NOT NULL,
     post_by         INT NOT NULL
+    post_parent     INT
 );
