@@ -26,6 +26,6 @@ CREATE TABLE posts (
     post_content    TEXT NOT NULL,
     post_date       DATETIME NOT NULL,
     post_topic      INT NOT NULL,
-    post_by         INT NOT NULL
+    post_by         INT NOT NULL,
     post_parent     INT
 );
