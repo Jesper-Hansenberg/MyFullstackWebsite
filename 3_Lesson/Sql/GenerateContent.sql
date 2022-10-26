@@ -2,9 +2,9 @@
 
 INSERT INTO 
         users(user_name, user_pass, user_email, created_at)
-    VALUES('snaps',
-        'asdasd',
-        'snaps@lortemail.dk',
+    VALUES('jesper',
+        '$2y$10$rheau3WmSpQ4zVx9Vd0vFeR.MtiaNC1z6RBI8FNlg9Jgl2s0A0N4m',
+        'asdasd@gmail.com',
         NOW());
 
 INSERT INTO 
