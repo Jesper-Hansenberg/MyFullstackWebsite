@@ -2,11 +2,10 @@
 $servername = "";
 $ini = "";
 $dbport = 3306;
-if($_SERVER['SERVER_ADDR'] != "::1")
-{
+if ($_SERVER['SERVER_ADDR'] != "::1") {
     $servername = "mysql17.unoeuro.com";
     $ini = parse_ini_file('../secrets.ini');
-}else{
+} else {
     $servername = "localhost";
     $ini = parse_ini_file('../yourSecrets.ini');
 };
