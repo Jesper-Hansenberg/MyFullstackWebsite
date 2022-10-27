@@ -12,7 +12,6 @@ if ($_POST['topic_id']) {
         posts.post_topic,
         posts.post_content,
         posts.post_date,
-        posts.post_parent,
         users.user_name
     FROM   posts
         LEFT JOIN users
@@ -40,14 +39,14 @@ if ($_POST['topic_id']) {
     </tr>";
 
         while ($row = mysqli_fetch_array($result)) {
-            
+
             $a = $row['user_name'];
             $b = $row['post_topic'];
             $c = $row['post_content'];
             $d = $row['post_date'];
 
             echo "<tr>";
-            
+
             echo "<td>" . $a . "</td>";
             echo "<td>" . $b . "</td>";
             echo "<td>" . $c . "</td>";

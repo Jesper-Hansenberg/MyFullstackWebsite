@@ -35,6 +35,18 @@ if ($result->num_rows > 0) {
     mysqli_close($conn);
 }
 
+?>
+
+<div>
+    <form action="postCategory.php" method="post">
+        <input type="text" name="cat_title" value="Title"/>
+        <input type="text" name="cat_desc" value="Description"/>
+        <input type="submit" value="Create new"/>
+    </form>
+</div>
+
+<?php
+
 include('./footer.php');
 ?>
 
