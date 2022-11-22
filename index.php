@@ -7,10 +7,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: ./2_Lesson/login.php");
     exit;
 }else {
-    header("location: ./5_Lesson/index.php");
+    header("location: ./6_Lesson/index.php");
     exit;
 }
-
-
 
 ?>
