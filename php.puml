@@ -1,0 +1,30 @@
+@startuml
+
+left to right direction
+actor "User" as user
+actor "Browser" as browser
+actor "Server" as server
+rectangle somepage.php {
+    rectangle FormRequest {
+        usecase "POST" as post
+        usecase "GET" as get
+    }
+}
+rectangle handlePostFromSomePage.php {
+    usecase "Login" as login
+    usecase "Register" as register
+    usecase "Response.php" as response
+}
+user --> post
+user --> get
+post <-- server
+get <-- server
+server --> login
+server --> register 
+response --> browser
+login --> response
+register --> response
+browser --> user
+
+
+@enduml
